@@ -1,0 +1,9 @@
+build/
+.idea/
+
+killer.pid
+
+log
+.env
+
+xcheck.db

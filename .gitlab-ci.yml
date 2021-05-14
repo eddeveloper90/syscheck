@@ -1,0 +1,13 @@
+deploy_master:
+  only:
+    - master
+  tags:
+    - xcheck
+  script:
+    - make
+    - make install
+    - chmod a+x run.sh
+    - chmod a+x stop.sh
+    - cd ~/xcheck/
+    - ./stop.sh
+    - ps aux | grep -i xcheck

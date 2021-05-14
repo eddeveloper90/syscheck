@@ -1,0 +1,19 @@
+[Unit]
+Description=xcheck
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+WorkingDirectory=/home/gitlab-runner/xcheck/
+ExecStart=/bin/bash -c 'source /home/gitlab-runner/xcheck/run.sh'
+ExecStop=/bin/bash -c 'source /home/gitlab-runner/xcheck/stop.sh'
+PIDFile=/home/gitlab-runner/xcheck/killer.pid
+
+User=gitlab-runner
+
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
