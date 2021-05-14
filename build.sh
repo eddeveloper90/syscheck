@@ -1,4 +1,5 @@
-#/!bin/bash
+#!/bin/bash
+
 RFILE="run.sh"
 SFILE="stop.sh"
 FILENAME=$(go run . version)

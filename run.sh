@@ -1,6 +1,6 @@
 #!/usr/bin/bash
-PIDFILE=$(./build/open .env: no such file or directory pidfile)
+PIDFILE=$(./build/xcheck-0.0.5 pidfile)
 touch $PIDFILE
-./build/open .env: no such file or directory >> log 2>> log &
+./build/xcheck-0.0.5 >> log 2>> log &
 PID=$!
 echo $PID > $PIDFILE
